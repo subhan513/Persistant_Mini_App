@@ -24,11 +24,12 @@ const App = () => {
   return (
     <BrowserRouter>
 
-      <div className="relative w-full min-h-screen">
+      <div className="relative w-full min-h-screen bg-gray-50">
         {/* Navbar */}
         <Navbar setOpen={setOpen} />
         {/* Routes */}
-              <div className="grid grid-cols-3">
+        <h1 className="text-5xl p-3">All Pinned Tasks</h1>
+              <div className="grid grid-cols-3 gap-3 p-3">
           {
           PinnedTasks?.map((note)=>{
             return  <AllPinnedNotes title={note.title} content={note.content} id={note._id} isPinned={note.isPinned}/>

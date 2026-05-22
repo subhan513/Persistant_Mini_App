@@ -23,21 +23,23 @@ const AllPinnedNotes = ({
     await getNotes();
   };
   return (
-    <div className="w-full bg-yellow-100 border-2 border-yellow-400 rounded p-4 flex flex-col max-h-[80vh]">
-      <h2 className="text-lg font-bold text-gray-800 mb-2 min-h-[15vh]">
+    <div className="w-full bg-yellow-100 border-2 border-yellow-400 rounded p-3 sm:p-4 flex flex-col h-auto sm:max-h-[500px]">
+      <h2 className="text-base sm:text-lg font-bold text-gray-800 mb-2 line-clamp-2">
         {title}
       </h2>
-      <p className="text-gray-700 text-sm mb-3 flex-grow overflow-y-auto min-h-[30vh]">
+      <p className="text-gray-700 text-xs sm:text-sm mb-3 flex-grow overflow-y-auto">
         {content}
       </p>
       <div className="mt-2 flex items-center gap-2">
         <input
           type="checkbox"
-          className="cursor-pointer"
+          className="cursor-pointer w-4 h-4"
           onClick={() => handlePinnedTask(id)}
           checked={isPinned}
         />
-        <label className="text-gray-700 cursor-pointer">Pinned Task</label>
+        <label className="text-gray-700 cursor-pointer text-xs sm:text-sm">
+          Pinned
+        </label>
       </div>
     </div>
   );

@@ -27,33 +27,33 @@ const NotesCard = ({ title, content, id, EditOpen, setEditOpen, isPinned }) => {
     await getNotes();
   };
   return (
-    <div className="w-full bg-white border border-gray-300 rounded p-4 flex flex-col max-h-[80vh]">
-      <h2 className="text-lg font-bold text-gray-800 mb-2 min-h-[15vh]">
+    <div className="w-full bg-white border border-gray-300 rounded p-3 sm:p-4 flex flex-col h-auto sm:max-h-[500px]">
+      <h2 className="text-base sm:text-lg font-bold text-gray-800 mb-2 line-clamp-2">
         {title}
       </h2>
-      <p className="text-gray-700 text-sm mb-3 flex-grow overflow-y-auto min-h-[30vh]">
+      <p className="text-gray-700 text-xs sm:text-sm mb-3 flex-grow overflow-y-auto">
         {content}
       </p>
       <div className="mt-2 flex items-center gap-2 mb-4">
         <input
           type="checkbox"
-          className="cursor-pointer"
+          className="cursor-pointer w-4 h-4"
           onClick={() => handlePinnedTask(id)}
           checked={isPinned}
         />
-        <label className="text-gray-700 cursor-pointer">
+        <label className="text-gray-700 cursor-pointer text-xs sm:text-sm">
           {isPinned ? "✓ Pinned" : "Pin this"}
         </label>
       </div>
-      <div className="flex gap-3">
+      <div className="flex gap-2 sm:gap-3">
         <button
-          className="flex-1 text-white p-2 bg-blue-600 rounded cursor-pointer hover:bg-blue-700"
+          className="flex-1 text-white p-2 sm:p-2 bg-blue-600 rounded cursor-pointer hover:bg-blue-700 text-xs sm:text-sm font-medium"
           onClick={() => handleNoteEdit(id)}
         >
           Edit
         </button>
         <button
-          className="flex-1 text-white p-2 bg-red-600 rounded cursor-pointer hover:bg-red-700"
+          className="flex-1 text-white p-2 sm:p-2 bg-red-600 rounded cursor-pointer hover:bg-red-700 text-xs sm:text-sm font-medium"
           onClick={() => handleNoteDelete(id)}
         >
           Delete
