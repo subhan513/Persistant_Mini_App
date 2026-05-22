@@ -3,8 +3,8 @@ import { useCreateNoteMutation, useGetNotesMutation, useUpdateNoteMutation } fro
 import toast from "react-hot-toast";
 
 const UpdateNotes = ({note,setEditOpen}) => {
-  const [title, setTitle] = useState(note.title)
-  const [content, setContent] = useState(note.content)
+  const [title, setTitle] = useState(note?.title)
+  const [content, setContent] = useState(note?.content)
   const [UpdateNote] = useUpdateNoteMutation()
   const [getNotes] = useGetNotesMutation()
   const handleUpdateNote = async () => {
